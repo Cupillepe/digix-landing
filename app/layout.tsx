@@ -1,9 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", weight: ["300", "400", "500", "600"] });
-const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-mont", weight: ["300", "400", "600", "700", "800"] });
+import "@fontsource/inter/latin-300.css";
+import "@fontsource/inter/latin-400.css";
+import "@fontsource/inter/latin-500.css";
+import "@fontsource/inter/latin-600.css";
+import "@fontsource/montserrat/latin-300.css";
+import "@fontsource/montserrat/latin-400.css";
+import "@fontsource/montserrat/latin-600.css";
+import "@fontsource/montserrat/latin-700.css";
+import "@fontsource/montserrat/latin-800.css";
 
 export const metadata: Metadata = {
   title: "DIGIX Group | Apps, Web, Automatización y Espacios Inteligentes",
@@ -22,7 +28,7 @@ export const viewport: Viewport = { themeColor: "#0a0b0e" };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
-      <body className={`${inter.variable} ${montserrat.variable}`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
