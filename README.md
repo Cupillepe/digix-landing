@@ -21,6 +21,21 @@ npm run build    # genera la carpeta out/ (HTML, CSS y JS estáticos)
 - Textos y secciones: `app/page.tsx`
 - Estilos y colores: `app/globals.css` (variables en `:root`)
 
+## Docker
+
+```bash
+docker compose up -d --build   # http://localhost:8080
+```
+
+O sin compose:
+
+```bash
+docker build -t digix-landing .
+docker run -d -p 8080:80 --name digix-landing --restart unless-stopped digix-landing
+```
+
+La imagen compila la página con Node 20 y la sirve con Nginx (≈75 MB). Sirve para cualquier VPS o servidor con Docker.
+
 ## Publicar en Vercel (recomendado, gratis)
 
 1. Crea una cuenta en https://vercel.com con tu GitHub.
